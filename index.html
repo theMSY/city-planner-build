@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <script type="text/javascript" src="js/zip.js/zip.js"></script>
+  <script type="text/javascript" src="js/zip.js/zip-ext.js"></script>
+  <script type="text/javascript" src="js/zip.js/HttpProgressReader.js"></script>
+  <script type="text/javascript" src="https://apps.sketchfab.com/web-importer/sketchfab-importer.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
+
+  <script>
+    zip.workerScriptsPath = 'js/zip.js/';
+  </script>
+
+  <link rel="stylesheet" href="https://jsdev.arcgis.com/4.15/esri/css/main.css">
+  <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css">
+
+  <script src="https://jsdev.arcgis.com/4.15/"></script>
+
+  <link rel="stylesheet" href="./index.css" />
+
+  <title>Participatory Planning</title>
+  <script>
+    // This will initiate Upscope connection. It's important it is added to all pages, even when the user is not logged in.
+    (function (w, u, d) {
+      var i = function () {
+        i.c(arguments)
+      };
+      i.q = [];
+      i.c = function (args) {
+        i.q.push(args)
+      };
+      var l = function () {
+        var s = d.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://code.upscope.io/zx2L9HXiEY.js';
+        var x = d.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      };
+      if (typeof u !== "function") {
+        w.Upscope = i;
+        l();
+      }
+    })(window, window.Upscope, document);
+
+    Upscope('init');
+  </script>
+</head>
+<body id="app">
+  <noscript>JavaScript is required in order to use this app </noscript>
+
+  <script>
+    require({
+      packages: [{
+        name: "app",
+        location: document.location.pathname.replace(/\/[^/]+$/, "")
+      }]
+    }, ["app/index"], function() {
+    });
+  </script>
+</body>
+</html>
